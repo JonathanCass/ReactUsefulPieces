@@ -1,7 +1,8 @@
 import React from 'react'
-import { browserHistory, Router } from 'react-router'
+import { browserHistory, Router, Route } from 'react-router'
 import { Provider } from 'react-redux'
 import PropTypes from 'prop-types'
+import OrdinalSuffix from '../routes/OrdinalSuffix/components/OrdinalSuffix'
 
 class App extends React.Component {
   static propTypes = {
