@@ -22,10 +22,18 @@ class Filter extends React.Component {
     })
   }
 
-  filterFunction() {
-    return(
-      <span>Array : {this.state.testArray} Current Entry : {this.state.entry}</span>
+  displayFunction(item) { // A Nice mapping function, accepts an array and outputs it with spaces, css white-space pre-wrap required
+    return(  
+        item.map( (entry, i) =>( <span key = {i} className = "arrayEntry" >{ entry } </span> ))    
     )
+  }
+
+  filterEvens(item) {
+    var even = function (num) {
+      return num % 2 === 0
+    }
+    var evenArray = item.filter(even)
+    return evenArray
   }
 
   render () {
@@ -34,7 +42,9 @@ class Filter extends React.Component {
         <form onSubmit = {this.handleSubmit}>
           <input type="text" name ="entry" placeholder = "Array Entry" onChange={this.handleChange} value={this.state.entry} className="inputBox" ></input>
         </form>
-        <p>{ this.filterFunction() }</p>
+        <p> Current Entry : { this.state.entry }</p>
+        <p> Array : { this.state.testArray }</p>
+        <div> Evens : { this.displayFunction(this.filterEvens(this.state.testArray)) }</div>
       </div>
     )
   }
