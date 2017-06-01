@@ -5,6 +5,7 @@ import CounterRoute from './Counter'
 import CounterOrdinalSuffix from './OrdinalSuffix'
 import CounterMapping from './Mapping'
 import CounterFilter from './Filter'
+import CounterFind from './Find'
 import CounterTEMPLATE from './TEMPLATE'
 
 /*  Note: Instead of using JSX, we recommend using react-router
@@ -19,6 +20,7 @@ export const createRoutes = (store) => ({
     CounterOrdinalSuffix(store),
     CounterMapping(store),
     CounterFilter(store),
+    CounterFind(store),
     CounterTEMPLATE(store)
   ]
 })

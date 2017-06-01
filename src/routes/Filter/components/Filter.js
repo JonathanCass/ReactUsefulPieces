@@ -43,7 +43,7 @@ class Filter extends React.Component {
           <input type="text" name ="entry" placeholder = "Array Entry" onChange={this.handleChange} value={this.state.entry} className="inputBox" ></input>
         </form>
         <p> Current Entry : { this.state.entry }</p>
-        <p> Array : { this.state.testArray }</p>
+        <p> Array : { this.displayFunction(this.state.testArray) }</p>
         <div> Evens : { this.displayFunction(this.filterEvens(this.state.testArray)) }</div>
       </div>
     )
