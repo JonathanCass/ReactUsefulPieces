@@ -12,7 +12,7 @@ class Mapping extends React.Component {
   mapFunction(){      //Relocated from render to allow if statements
     if(this.state.testArray) {      // this would check if the props were defined, here we just put the array from state in as a placeholder
       return (
-        this.state.testArray.map( (entry, i) =>(  //The index i is here and can be used to label the key for the mapping
+        this.state.testArray.map( (entry, i) =>(  //The index i is here and can be used to label the key on the mapping
           <p key = {i} className = "mapEntry" >{ entry } </p>
         ))
       )
