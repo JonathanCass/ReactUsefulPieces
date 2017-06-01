@@ -12,6 +12,8 @@ export const PageLayout = ({ children }) => (
     <Link to='/OrdinalSuffix' activeClassName='page-layout__nav-item--active'>Ordinal Suffix</Link>
     {' · '}
     <Link to='/Mapping' activeClassName='page-layout__nav-item--active'>Mapping</Link>
+    {' · '}
+    <Link to='/Filter' activeClassName='page-layout__nav-item--active'>Filtering</Link>
     <div className='page-layout__viewport'>
       {children}
     </div>
