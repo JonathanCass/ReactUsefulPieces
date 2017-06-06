@@ -23,21 +23,25 @@ class RecursiveSorting extends React.Component {
     })
   }
   
-  handleBubbleSort = () => { // Moves test array into place for use by the bubble sorting algorithm
-    let bubbleSorted = this.bubbleSort(this.state.testArray)
+  clearArray = () => {
     this.setState({
-      bubbleSort : bubbleSorted,
       testArray : []
     })
   }
 
-  bubbleSort(array) {   // if current value > next value , current moves up, i++ New Check if current > next current moves up again till end or not >
+  handleBubbleSort = () => { // Moves test array into place for use by the bubble sorting algorithm
+    this.setState({
+      bubbleSort : this.bubbleSort([...this.state.testArray])
+    })
+  }
+
+  bubbleSort(items) {   // if current value > next value , current moves up, i++ New Check if current > next current moves up again till end or not >
                                   // NO recursion here, the fucntion is not calling itself
-    let items = array
     do {
       var swapped = false  //If no values get moved then sorting is obviously done, here we prep a false which gets flipped to true on movement
       for (var i = 0; i < items.length; i++) {
         if (Number(items[i]) > Number(items[i+1])) {
+          console.log('this.state.testArray inside if',this.state.testArray)
           var temp = items[i]
           items[i] = items[i+1]
           items[i+1] = temp
@@ -45,6 +49,7 @@ class RecursiveSorting extends React.Component {
         }
       }
     } while(swapped)  // Did anything move if no quit out and return new array
+    console.log('this.state.testArray on return',this.state.testArray)
     return items
   }
 
@@ -62,6 +67,7 @@ class RecursiveSorting extends React.Component {
         </form>
         <p> Current Entry : { this.state.entry }</p>
         <p> Array : { this.displayFunction(this.state.testArray) }</p>
+        <button type="button" onClick={this.clearArray} className = "sortButton" >Clear Array</button>
         <button type="button" onClick={this.handleBubbleSort} className = "sortButton" >BubbleSort</button>
         <p> Result from BubbleSort : { this.displayFunction(this.state.bubbleSort) }</p>
       </div>
