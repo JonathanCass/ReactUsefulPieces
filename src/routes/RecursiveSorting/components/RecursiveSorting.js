@@ -24,19 +24,28 @@ class RecursiveSorting extends React.Component {
   }
   
   handleBubbleSort = () => { // Moves test array into place for use by the bubble sorting algorithm
-    let returnArray = [...this.state.testArray, 100 ]
+    let bubbleSorted = this.bubbleSort(this.state.testArray)
     this.setState({
-      bubbleSort : returnArray
+      bubbleSort : bubbleSorted,
+      testArray : []
     })
   }
 
-  bubbleSort(item) {   // if next value > moves up, if next > moves up again till end or not >, then IF values were moved starts again till none moved
+  bubbleSort(array) {   // if current value > next value , current moves up, i++ New Check if current > next current moves up again till end or not >
                                   // NO recursion here, the fucntion is not calling itself
-    if(item){
-    let returnArray = [...item, 100 ]
-    console.log('bubble sort run')
-    return returnArray
-    }
+    let items = array
+    do {
+      var swapped = false  //If no values get moved then sorting is obviously done, here we prep a false which gets flipped to true on movement
+      for (var i = 0; i < items.length; i++) {
+        if (Number(items[i]) > Number(items[i+1])) {
+          var temp = items[i]
+          items[i] = items[i+1]
+          items[i+1] = temp
+          swapped = true
+        }
+      }
+    } while(swapped)  // Did anything move if no quit out and return new array
+    return items
   }
 
   displayFunction(item) { // A Nice mapping function, accepts an array and outputs it with spaces, css white-space pre-wrap required
