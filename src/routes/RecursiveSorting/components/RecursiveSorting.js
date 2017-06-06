@@ -1,13 +1,14 @@
 import React from 'react'
-import './Filter.scss' 
+import './RecursiveSorting.scss' 
 
-class Filter extends React.Component {
+class RecursiveSorting extends React.Component {
   constructor() {
     super()
     this.state = {
-      testArray : [], entry : ''  
+      testArray : [], entry : '', bubbleSort : []  
     }
   }
+
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
@@ -21,19 +22,27 @@ class Filter extends React.Component {
       entry : ''
     })
   }
+  
+  handleBubbleSort = () => { // Moves test array into place for use by the bubble sorting algorithm
+    let returnArray = [...this.state.testArray, 100 ]
+    this.setState({
+      bubbleSort : returnArray
+    })
+  }
+
+  bubbleSort(item) {   // if next value > moves up, if next > moves up again till end or not >, then IF values were moved starts again till none moved
+                                  // NO recursion here, the fucntion is not calling itself
+    if(item){
+    let returnArray = [...item, 100 ]
+    console.log('bubble sort run')
+    return returnArray
+    }
+  }
 
   displayFunction(item) { // A Nice mapping function, accepts an array and outputs it with spaces, css white-space pre-wrap required
     return(  
         item.map( (entry, i) =>( <span key = {i} className = "arrayEntry" >{ entry } </span> ))    
     )
-  }
-
-  filterEvens(item) {
-    var even = function (num) {
-      return num % 2 === 0
-    }
-    var evenArray = item.filter(even)
-    return evenArray
   }
 
   render () {
@@ -44,10 +53,11 @@ class Filter extends React.Component {
         </form>
         <p> Current Entry : { this.state.entry }</p>
         <p> Array : { this.displayFunction(this.state.testArray) }</p>
-        <div> Evens : { this.displayFunction(this.filterEvens(this.state.testArray)) }</div>
+        <button type="button" onClick={this.handleBubbleSort} className = "sortButton" >BubbleSort</button>
+        <p> Result from BubbleSort : { this.displayFunction(this.state.bubbleSort) }</p>
       </div>
     )
   }
 }
 
-export default Filter
+export default RecursiveSorting

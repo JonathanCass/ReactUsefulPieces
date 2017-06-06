@@ -7,8 +7,8 @@ export const PageLayout = ({ children }) => (
   <div className='container text-center'>
     <IndexLink to='/' activeClassName='page-layout__nav-item--active'>Home</IndexLink>
     {' · '}
-    <Link to='/counter' activeClassName='page-layout__nav-item--active'>Counter</Link>
-    {' · '}
+    {/*<Link to='/counter' activeClassName='page-layout__nav-item--active'>Counter</Link>
+    {' · '}*/}
     <Link to='/OrdinalSuffix' activeClassName='page-layout__nav-item--active'>Ordinal Suffix</Link>
     {' · '}
     <Link to='/Mapping' activeClassName='page-layout__nav-item--active'>Mapping</Link>
@@ -16,6 +16,10 @@ export const PageLayout = ({ children }) => (
     <Link to='/Filter' activeClassName='page-layout__nav-item--active'>Filtering</Link>
     {' · '}
     <Link to='/Find' activeClassName='page-layout__nav-item--active'>Finding</Link>
+    {' · '}
+    <Link to='/AxiosGet' activeClassName='page-layout__nav-item--active'>AxiosGet</Link>
+    {' · '}
+    <Link to='/RecursiveSorting' activeClassName='page-layout__nav-item--active'>RecursiveSorting</Link>
     {' · '}
     <Link to='/TEMPLATE' activeClassName='page-layout__nav-item--active'>TEMPLATE</Link>
     <div className='page-layout__viewport'>

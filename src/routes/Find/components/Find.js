@@ -30,7 +30,7 @@ class Find extends React.Component {
       )
     }else{
       return(
-        <span>Postion : {item.indexOf(search)}</span>
+        <span>Position : {item.indexOf(search)}</span>
       )
     }
   }
