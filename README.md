@@ -1,6 +1,9 @@
-This is a simple project created with React Redux Starter Kit.  
+This is a project created with React Redux Starter Kit.  
 The purpose of which is to hold simple components performing basic operations for future reference.  
-Components will perform actions such as mapping through and displaying an array or formatting and redisplaying information in a particular format.  
+Simplicity is key here:  
+Many references online are buried in mountains of extraneous code which has little to no effect on the primary function being demonstrated.  
+Styling, Insignificant Optimizations, Remnants of Templates etc often serve to bury the pertinent information.    
+Components will perform a single function or a small set of closely associated functions to be described in the sections below.    
 The added components will all exist under src / routes .
 
 Components Present :  
