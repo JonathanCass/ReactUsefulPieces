@@ -14,6 +14,7 @@ Finding [ User input is tested against an array and a string, displays position 
     Case Insensitive version also present here  
 RecursiveSorting - Based off of exercises in Brian Holts Computer Science Lectures on Front End Masters  
     Present here as both a useful reference on simple recursive functions and practice for visualizing array sorting methods.  
-    [ User submits numbers into an array , Presses the button for Bubble Merge or Quick sort and the array is sorted via the chosen method and displayed on the page .]
-StringX
-    Simple String Flip [ Input a string, press button to flip ]
+    [ User submits numbers into an array , Presses the button for Bubble Merge or Quick sort and the array is sorted via the chosen method and displayed on the page .]  
+StringX  
+    Simple String Flip  
+    Flip ignoring special characters  
