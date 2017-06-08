@@ -8,6 +8,7 @@ import CounterFilter from './Filter'
 import CounterFind from './Find'
 import CounterAxiosGet from './AxiosGet'
 import CounterRecursiveSorting from './RecursiveSorting'
+import CounterStringX from './StringX'
 import CounterTEMPLATE from './TEMPLATE'
 
 
@@ -26,6 +27,7 @@ export const createRoutes = (store) => ({
     CounterFind(store),
     CounterAxiosGet(store),
     CounterRecursiveSorting(store),
+    CounterStringX(store),
     CounterTEMPLATE(store)
   ]
 })

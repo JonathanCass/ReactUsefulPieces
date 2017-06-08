@@ -21,6 +21,8 @@ export const PageLayout = ({ children }) => (
     {' · '}
     <Link to='/RecursiveSorting' activeClassName='page-layout__nav-item--active'>RecursiveSorting</Link>
     {' · '}
+    <Link to='/StringX' activeClassName='page-layout__nav-item--active'>StringX</Link>
+    {' · '}
     <Link to='/TEMPLATE' activeClassName='page-layout__nav-item--active'>TEMPLATE</Link>
     <div className='page-layout__viewport'>
       {children}
